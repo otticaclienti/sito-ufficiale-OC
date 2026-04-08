@@ -1,25 +1,54 @@
+/* ============================
+   BRAND LOGO CAROUSEL
+============================ */
+.brands-section {
+  background: var(--bg-dark);
+  padding-bottom: 80px;
+}
+
+.logo-carousel {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
 .logo-row {
   overflow: hidden;
-  margin: 20px 0;
+  margin: 16px 0;
+  padding: 10px 0;
 }
 
 .logo-track {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   will-change: transform;
+  align-items: center;
 }
 
 .logo-track img {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #05935a;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border: 2px solid rgba(5, 147, 90, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+  filter: grayscale(20%);
 }
+
+.logo-track img:hover {
+  border-color: var(--green);
+  box-shadow: 0 4px 25px rgba(5, 147, 90, 0.3);
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
 @media (max-width: 576px) {
   .logo-track img {
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
+  }
+
+  .logo-track {
+    gap: 30px;
   }
 }

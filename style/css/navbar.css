@@ -1,107 +1,130 @@
 /* ============================
-   NAVBAR BASE
+   NAVBAR
 ============================ */
-.navbarCustom {
-  height: 100px;
-  width: 100%;
-  padding: 0 30px;
-  background-color: #fafafa;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-
-/* LOGO */
-.logoCustom {
-  height: 100px;
-  width: auto;
-}
-
-@media (min-width: 992px) {
-  .logoCustom {
-    height: 150px;
-  }
-}
-
-/* ============================
-   LINK + HOVER SFUMATO
-============================ */
-.navbar-nav .nav-link {
-  position: relative;
-  color: #05935a;
-  margin-inline: 12px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* Linea animata */
-.navbar-nav .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background-color: #05935a;
-  transition: width 0.3s ease;
-}
-
-/* Hover */
-.navbar-nav .nav-link:hover {
-  color: #101110;
-}
-
-.navbar-nav .nav-link:hover::after {
-  width: 100%;
-}
-
-/* ============================
-   FIX NAVBAR FIXED-TOP
-============================ */
-.navbar {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
+#mainNav {
+  padding: 12px 0;
+  background: rgba(10, 22, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.35s ease;
   z-index: 1050;
 }
 
-/* Compensazione contenuto */
-body {
-  padding-top: 120px; /* desktop più compatto */
+#mainNav.scrolled {
+  padding: 8px 0;
+  background: rgba(10, 22, 18, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 576px) {
-  body {
-    padding-top: 140px; /* mobile più alto */
-  }
+/* LOGO */
+.nav-logo {
+  height: 70px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+#mainNav.scrolled .nav-logo {
+  height: 55px;
+}
+
+/* BODY PADDING */
+body {
+  padding-top: 94px;
+}
+
+/* LINKS */
+.navbar-nav .nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
+  padding: 8px 16px !important;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--green);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* CTA BUTTON IN NAV */
+.nav-cta .btn-nav {
+  background: var(--green);
+  color: #fff !important;
+  border-radius: 50px;
+  padding: 10px 24px !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: var(--transition);
+}
+
+.nav-cta .btn-nav::after {
+  display: none;
+}
+
+.nav-cta .btn-nav:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(5, 147, 90, 0.4);
+}
+
+/* TOGGLER */
+.navbar-toggler {
+  border: none;
+  padding: 8px;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.navbar-toggler .fas {
+  color: var(--green);
+  font-size: 1.4rem;
 }
 
 /* ============================
-   MOBILE MENU + NAVBAR MOBILE PIÙ ALTA
+   MOBILE MENU
 ============================ */
 @media (max-width: 991px) {
-
-  /* NAVBAR MOBILE PIÙ ALTA */
-  .navbarCustom {
-    height: 110px;
-    padding: 0 20px;
+  .nav-logo {
+    height: 60px;
   }
 
-  .logoCustom {
-    height: 90px;
+  #mainNav.scrolled .nav-logo {
+    height: 50px;
   }
 
-  /* MENU A COMPARSA */
   .navbar-collapse {
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     position: fixed;
     top: 0;
     right: 0;
-    height: 100%;
-    width: 70%;
-    background-color: #fff;
-    z-index: 1050;
+    height: 100vh;
+    width: 300px;
+    max-width: 80vw;
+    background: rgba(10, 22, 18, 0.97);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    z-index: 1060;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,6 +132,7 @@ body {
     padding-top: 20px;
     transform: translateX(100%);
     visibility: hidden;
+    border-left: 1px solid var(--border-subtle);
   }
 
   .navbar-collapse.show {
@@ -119,29 +143,34 @@ body {
   #logoCollapse {
     display: block;
     text-align: center;
-    margin: 20px 0 10px 20px;
+    margin: 20px 0;
   }
 
-  .navbar-collapse.show .navbar-nav {
-    margin-top: 50px;
+  #logoCollapse .nav-logo {
+    height: 80px;
+  }
+
+  .navbar-collapse .navbar-nav {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
-  .navbar-collapse.show .nav-link {
-    margin: 12px 0;
+  .navbar-collapse .nav-link {
+    margin: 4px 0;
+    font-size: 1.05rem;
+    padding: 12px 24px !important;
   }
 
-  .navbar-brand#logoNavbar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  .nav-cta {
+    margin-top: 20px;
   }
 
   .navbar-toggler {
-    position: absolute;
-    right: 15px;
+    position: relative;
+    z-index: 1070;
   }
 }
 
@@ -149,37 +178,32 @@ body {
    DESKTOP
 ============================ */
 @media (min-width: 992px) {
+  .nav-logo {
+    height: 80px;
+  }
+
   .navbar-collapse {
-    transform: none;
+    transform: none !important;
     position: static;
     height: auto;
     width: auto;
-    background-color: transparent;
-    visibility: visible;
+    background: transparent;
+    visibility: visible !important;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    backdrop-filter: none;
   }
 
   .navbar-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 24px;
-  }
-
-  .navbar-nav .nav-link {
-    margin: 0;
+    gap: 4px;
   }
 
   #logoCollapse {
-    display: none;
+    display: none !important;
   }
-}
-
-/* ICONA MENU */
-.navbar-toggler .fas {
-  color: #05935a;
-  font-size: 1.5rem;
 }
