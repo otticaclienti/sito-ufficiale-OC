@@ -1,8 +1,106 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  /* ============================
+     MARQUEE / LOGO CAROUSEL
+  ============================ */
   initMarquee('#track-top',   { direction: 'left',  speed: 30 });
   initMarquee('#track-bottom',{ direction: 'right', speed: 30 });
+
+  /* ============================
+     SCROLL REVEAL ANIMATIONS
+  ============================ */
+  var revealElements = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    revealElements.forEach(function (el) {
+      el.classList.add('revealed');
+    });
+  }
+
+  /* ============================
+     NAVBAR SCROLL EFFECT
+  ============================ */
+  var navbar = document.getElementById('mainNav');
+  if (navbar) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
+
+  /* ============================
+     SMOOTH SCROLL FOR NAV LINKS
+  ============================ */
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        var target = document.getElementById(href.substring(1));
+        if (target) {
+          var offset = 100;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }
+      // Close mobile menu after click
+      var navbarCollapse = document.getElementById('navbarNav');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).hide();
+      }
+    });
+  });
+
+  /* ============================
+     CLOSE MOBILE MENU ON OUTSIDE CLICK
+  ============================ */
+  document.addEventListener('click', function (event) {
+    var navbarCollapse = document.getElementById('navbarNav');
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    if (
+      navbarCollapse &&
+      navbarCollapse.classList.contains('show') &&
+      !navbarCollapse.contains(event.target) &&
+      !navbarToggler.contains(event.target)
+    ) {
+      new bootstrap.Collapse(navbarCollapse).hide();
+    }
+  });
+
+  /* ============================
+     HIDE LOGO ON MOBILE MENU OPEN
+  ============================ */
+  var navbarCollapse = document.getElementById('navbarNav');
+  var logoNavbar = document.querySelector('.navbar-brand:not(#logoCollapse)');
+  if (navbarCollapse && logoNavbar) {
+    navbarCollapse.addEventListener('show.bs.collapse', function () {
+      logoNavbar.style.opacity = '0';
+    });
+    navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+      logoNavbar.style.opacity = '1';
+    });
+  }
+
 });
 
+/* ============================
+   MARQUEE FUNCTION
+============================ */
 function initMarquee(selector, options) {
   var direction = (options && options.direction) ? options.direction : 'left';
   var speed = (options && options.speed) ? options.speed : 50;
@@ -13,7 +111,6 @@ function initMarquee(selector, options) {
   var row = track.parentElement;
   var originalItems = Array.prototype.slice.call(track.children);
 
-  // Attendi che le immagini siano cariche (evita misure sballate = loopWidth errato)
   var loaders = originalItems.map(function (img) {
     if (img.complete) return Promise.resolve();
     return new Promise(function (resolve) {
@@ -23,46 +120,37 @@ function initMarquee(selector, options) {
   });
 
   Promise.all(loaders).then(function () {
-    // Larghezza del set originale PRIMA di clonare
     var originalWidth = track.scrollWidth;
 
-    // Clona una volta il set originale per creare continuità
     originalItems.forEach(function (el) {
       track.appendChild(el.cloneNode(true));
     });
 
-    // Se serve, estendi ulteriormente per riempire lo schermo
     while (track.scrollWidth < row.offsetWidth * 2) {
       originalItems.forEach(function (el) {
         track.appendChild(el.cloneNode(true));
       });
     }
 
-    var loopWidth = originalWidth;     // un ciclo completo
+    var loopWidth = originalWidth;
     var dir = (direction === 'left') ? -1 : 1;
-    var pos = (dir === 1) ? -loopWidth : 0; // per right si parte da -loopWidth
-    var paused = false;
+    var pos = (dir === 1) ? -loopWidth : 0;
     var last = performance.now();
 
     function step(now) {
       var dt = (now - last) / 1000;
       last = now;
 
-      if (!paused) {
-        pos += dir * speed * dt;
+      pos += dir * speed * dt;
 
-        // Wrapping continuo nell’intervallo [-loopWidth, 0]
-        if (pos <= -loopWidth) pos += loopWidth; // ha superato la metà a sinistra → riporta avanti
-        if (pos >= 0)         pos -= loopWidth; // ha superato la metà a destra → riporta indietro
+      if (pos <= -loopWidth) pos += loopWidth;
+      if (pos >= 0) pos -= loopWidth;
 
-        track.style.transform = 'translateX(' + pos + 'px)';
-      }
+      track.style.transform = 'translateX(' + pos + 'px)';
       requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
 
-
-    // Resize: estendi se necessario mantenendo il loop
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
@@ -72,55 +160,7 @@ function initMarquee(selector, options) {
             track.appendChild(el.cloneNode(true));
           });
         }
-        // loopWidth resta la larghezza del set originale; la posizione continua a fare wrapping
       }, 150);
     });
   });
 }
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-
-    // Se è un link interno (#id), gestisci scroll fluido
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        const offset = 130;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    }
-
-    // Chiudi la navbar dopo il click (sia interni che esterni)
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    if (navbarCollapse.classList.contains('show')) {
-      new bootstrap.Collapse(navbarCollapse).hide();
-    }
-  });
-});
-
-// Chiudi la navbar se clicchi fuori
-document.addEventListener('click', function(event) {
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  const navbarToggler = document.querySelector('.navbar-toggler');
-
-  if (
-    navbarCollapse.classList.contains('show') &&
-    !navbarCollapse.contains(event.target) &&
-    !navbarToggler.contains(event.target)
-  ) {
-    new bootstrap.Collapse(navbarCollapse).hide();
-  }
-});
-const navbarCollapse = document.getElementById('navbarSupportedContent');
-const logoNavbar = document.getElementById('logoNavbar');
-
-navbarCollapse.addEventListener('show.bs.collapse', () => {
-  logoNavbar.style.display = 'none';
-});
-
-navbarCollapse.addEventListener('hidden.bs.collapse', () => {
-  logoNavbar.style.display = 'block';
-});
