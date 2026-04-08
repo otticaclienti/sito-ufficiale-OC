@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 140px 0 0;
+  padding: 100px 0 0;
   background: linear-gradient(170deg, #0a1612 0%, #071a12 40%, #0d2418 100%);
   overflow: hidden;
   border-top: none;
@@ -47,7 +47,7 @@
   border: 1px solid rgba(5, 147, 90, 0.4);
   padding: 8px 24px;
   border-radius: 50px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .hero-title {
@@ -56,6 +56,7 @@
   color: var(--text-white);
   line-height: 1.15;
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
