@@ -22,6 +22,9 @@
   height: 70px;
   width: auto;
   transition: height 0.3s ease;
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
 }
 
 #mainNav.scrolled .nav-logo {

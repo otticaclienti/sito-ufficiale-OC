@@ -19,6 +19,9 @@
   height: 70px;
   width: auto;
   margin-bottom: 12px;
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
 }
 
 .footer-logo-link {
