@@ -1,0 +1,302 @@
+.value-section {
+  padding: 30px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.value-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--olive);
+  margin-bottom: 0px;
+}
+
+.value-title2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgb(237, 232, 232);
+  margin-bottom: 60px;
+}
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 50px;
+  padding: 25px 20px;
+  background: rgba(247, 246, 246, 0.91);
+  border-left: 6px solid var(--olive);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.value-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--olive);
+  min-width: 60px;
+}
+
+.value-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--olive);
+  margin-bottom: 10px;
+}
+
+.value-content p {
+  font-size: 1rem;
+  color: #1f1e1e;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .value-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .value-number {
+    margin-bottom: 10px;
+  }
+}
+.value-cta {
+  margin-top: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--olive);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.cta-button:hover {
+  background-color: #046b44;
+  transform: translateY(-3px);
+}
+
+.cta-subtext {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #eaeaea;
+  opacity: 0.9;
+}
+
+
+.five-benefits {
+  padding: 80px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.benefits-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--olive);
+}
+
+.benefits-title2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 60px;
+}
+
+/* CARD PREMIUM – UNA PER RIGA */
+.benefit-card {
+  width: 80%;
+  margin: 0 auto 40px auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  background: #ffffff;
+  border-left: 6px solid var(--olive);
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover */
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+}
+
+/* ICONA */
+.benefit-icon {
+  font-size: 2.6rem;
+  color: var(--olive);
+  min-width: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* TESTO */
+.benefit-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--olive);
+  margin-bottom: 10px;
+}
+
+.benefit-content p {
+  font-size: 1rem;
+  color: #151515;
+  line-height: 1.5;
+}
+
+/* ALTERNANZA: ICONE A DESTRA */
+.benefit-card.right {
+  flex-direction: row-reverse;   /* <— QUESTA È LA CHIAVE */
+  border-left: none;
+  border-right: 6px solid var(--olive);
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .benefit-card,
+  .benefit-card.right {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    border-left: 6px solid var(--olive);
+    border-right: none;
+  }
+
+  .benefit-icon {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+.three-features {
+  padding: 80px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.tf-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--olive);
+
+}
+.tf-title2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 60px;
+}
+.tf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.tf-item {
+  display: flex;
+  gap: 20px;
+  background: rgba(233, 230, 230, 0.977);
+  padding: 25px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(26, 255, 0, 0.786);
+  backdrop-filter: blur(4px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tf-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+}
+
+.tf-icon {
+  font-size: 2.2rem;
+  color: var(--olive);
+  min-width: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tf-text h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--olive);
+  margin-bottom: 8px;
+}
+
+.tf-text p {
+  font-size: 1rem;
+  color: #302e2e;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .tf-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tf-icon {
+    margin-bottom: 10px;
+  }
+}
+.team-section {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.team-card {
+  background: rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 25px 20px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+}
+
+.team-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--olive);
+  margin-bottom: 15px;
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--olive);
+  margin-bottom: 5px;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #eaeaea;
+  opacity: 0.9;
+}

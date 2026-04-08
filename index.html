@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ottica Clienti — Il Network per Ottici Italiani</title>
+  <meta name="description" content="Ottica Clienti è il primo network dedicato agli ottici italiani. Aggiungi 15-20 nuovi clienti al mese per progressivi e monofocali con il nostro metodo garantito.">
+  <meta property="og:title" content="Ottica Clienti — Il Network per Ottici Italiani">
+  <meta property="og:description" content="Aggiungi 15-20 nuovi clienti al mese per progressivi e monofocali. Candidatura gratuita e senza impegno.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://otticaclienti.it">
+  <meta property="og:image" content="https://otticaclienti.it/media/img/LogoOttica.png">
+  <link rel="icon" type="image/png" href="media/img/favicon.png">
+<!-- Font Awesome via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- CSS PERSONALE -->
+  <link rel="stylesheet" href="style/css/style.css">
+<!-- FONT -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Carattere&family=Clicker+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbarCustom navbar-expand-lg fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    
+    <!-- Logo mobile centrato -->
+    <a class="navbar-brand mx-auto d-lg-none" href="./" id="logoNavbar">
+      <img class="logoCustom" src="media/img/LogoOttica.png" alt="Ottica Clienti logo" />
+    </a>
+
+    <!-- Logo desktop -->
+    <a class="navbar-brand col-4 d-none d-lg-block" href="./">
+      <img class="logoCustom" src="media/img/LogoOttica.png" alt="Ottica Clienti logo" />
+    </a>
+
+    <!-- Bottone toggler -->
+    <button class="navbar-toggler btnCustom ms-auto" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fas fa-bars"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse-inner">
+        <a class="navbar-brand d-lg-none mb-4" href="./" id="logoCollapse">
+          <img class="logoCustom" src="media/img/LogoOttica.png" alt="Ottica Clienti logo" />
+        </a>
+
+        <ul class="navbar-nav oswald-front-navbar align-items-center fs-5 mx-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfJw2MtKH2KC5GZxQKN_yAZ9osTJOgi1rkueBHAj0DDZoNCsw/viewform" target="_blank">CANDIDATURA GRATUITA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#chisiamo">CHI SIAMO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#garanzia">GARANZIA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servizi">SERVIZI</a></li>
+          
+          <li class="nav-item"><a class="nav-link" href="#ilteam">IL TEAM</a></li>
+       </ul>
+      </div>
+    </div>
+
+</nav>
+
+<script>
+document.addEventListener('click', function (event) {
+  const navbarCollapse = document.getElementById('navbarSupportedContent');
+  const toggler = document.querySelector('.navbar-toggler');
+
+  // se la navbar è aperta
+  if (navbarCollapse.classList.contains('show')) {
+    // se il click NON è dentro la navbar e NON è sul toggler
+    if (!navbarCollapse.contains(event.target) && !toggler.contains(event.target)) {
+      // chiudi la navbar
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+      bsCollapse.hide();
+    }
+  }
+});
+</script>
+
+  <!-- Contenuto -->
+<div class="hero-wrapper">
+  <div class="hero-text montserrat">
+    <h1 class="mt-5"> Le <span class="underline-strong">grandi catene</span> fanno concorrenza sul <span class="underline-strong">prezzo</span> e ti stanno <span class="underline-strong">portando via i clienti</span>?</h1>
+    <p class="fs-2">Entra in <span class="highlight">Ottica Clienti</span>  e aggiungi 15–20 nuovi clienti al mese per progressivi e monofocali.</p>
+    <div class="text-center mt-2 roboto-slab">
+      <a href="#chisiamo" class="btn btn-custom btn-lg mb-4">Scopri di più</a>
+    </div>
+  </div>
+</div>
+
+<section class="value-section roboto-slab" id="chisiamo">
+  <div class="container">
+
+    <h2 class="value-title">Il nostro metodo per far</h2>
+    <h2 class="value-title2">crescere il tuo centro ottico</h2>
+    <div class="value-item">
+      <div class="value-number">01</div>
+      <div class="value-content">
+        <h3>Analisi del territorio e del pubblico</h3>
+        <p>
+          Studiamo la tua zona, identifichiamo chi ha il reale bisogno di monofocali e progressivi di alta gamma.
+        </p>
+      </div>
+    </div>
+
+    <div class="value-item">
+      <div class="value-number">02</div>
+      <div class="value-content">
+        <h3>Gestione completa degli appuntamenti</h3>
+        <p>
+          Contattiamo, qualifichiamo e fissiamo per te gli appuntamenti
+          direttamente nel calendario.
+        </p>
+      </div>
+    </div>
+
+    <div class="value-item">
+      <div class="value-number">03</div>
+      <div class="value-content">
+        <h3>Esame visivo in presenza</h3>
+        <p>
+          Gestiamo reminder e follow-up per assicurarci che la persona si presenti puntuale alla visita.
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="value-cta text-center roboto-slab">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJw2MtKH2KC5GZxQKN_yAZ9osTJOgi1rkueBHAj0DDZoNCsw/viewform" 
+     target="_blank" 
+     class="cta-button">
+    Candidati ora
+  </a>
+  <p class="cta-subtext">Candidatura gratuita e senza impegno</p>
+  </div>
+</section>
+<div class="borderCustom mt-5 " style="width:90%; margin:0 auto;"></div>
+<div class="content2 roboto-slab ">
+    <h2 class="roboto-slab h2Custom fs-1">Le testimonianze di chi ha già</h2>
+    <h2 class="roboto-slab h2Custom2 fs-1"> installato Ottica Clienti nel proprio centro </h2>
+</div>
+
+ <!-- Video -->
+<div class="mt-5 mb-5 video-wrapper marginCustom">
+    <video controls>
+      <source src="media/video/video.mp4" type="video/mp4">
+      Il tuo browser non supporta il tag video.
+    </video>
+</div>
+<div class="borderCustom mt-5 " style="width:90%; margin:0 auto;"></div>
+<section class="garanzia-section mt-5 py-5 roboto-slab " id="garanzia">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Colonna sinistra -->
+      <div class="col-md-6 text-white">
+        <p class="fs-4 text-center"><strong>Non basiamo il nostro lavoro sulle promesse. Lo basiamo su ciò che possiamo documentare.</strong></p>
+        <p>Nel nostro settore abbondano belle presentazioni e numeri poco verificabili — ma questo non paga le bollette del tuo centro né sostiene il tuo laboratorio. </p>
+        <p>Lavoriamo solo con chi ha le basi per crescere davvero dentro il nostro Network.</p>
+        <p>E se ti diciamo “andiamo avanti”, lo facciamo assumendoci un impegno preciso e scritto:</p>
+        <p>una Garanzia chiara sugli appuntamenti che ti portiamo.</p>
+        <div class="text-center marginB">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJw2MtKH2KC5GZxQKN_yAZ9osTJOgi1rkueBHAj0DDZoNCsw/viewform" target="_blank" class="btn2 btn2-invert mt-3">Candidati ora</a>
+        </div>
+      </div>
+
+      <!-- Colonna destra -->
+      <div class="col-md-6 bg-light text-dark p-4 rounded mt-5">
+        <h5 class="mb-3">Art.10 - Garanzia</h5>
+        <p>La presente garanzia opera esclusivamente nei casi in cui, al termine del periodo iniziale di collaborazione, il Fornitore non abbia adempiuto agli obblighi contrattuali di cui all’Art. 5, con particolare riferimento alla generazione e fornitura di appuntamenti effettivi e verificabili presso i punti vendita del Cliente.</p>
+        <p>In tale ipotesi, il Cliente avrà diritto al rimborso fino a concorrenza dell’investimento iniziale sostenuto.
+           Ai fini dell’applicazione della presente garanzia, l’adempimento del Fornitore si considera regolarmente eseguito qualora gli appuntamenti siano stati generati e messi a disposizione del Cliente, a prescindere dall’esito delle attività di gestione, conversione o vendita interna di competenza del Cliente ai sensi dell’Art. 6.
+           La verifica dell’avvenuta erogazione del servizio sarà effettuata sulla base di dati oggettivi e tracciabili, direttamente riconducibili all’operato del Fornitore.</p>
+        <p>La garanzia non trova applicazione qualora gli appuntamenti siano stati forniti, indipendentemente da eventuali risultati economici, commerciali o organizzativi conseguiti dal Cliente.
+           Il rimborso, ove spettante, verrà corrisposto entro 30 (trenta) giorni decorrenti dalla verifica della documentazione fornita dal Cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="borderCustom mt-5 " style="width:90%; margin:0 auto;"></div>
+
+  <div class="content2">
+    <h2 class="fs-1 roboto-slab">
+      <span class="text-green">Alcuni dei nostri centri partner trattano</span> <br>
+      <span class="text-olive">i principali brand del settore, tra cui:</span>
+    </h2>
+  </div>
+  <!-- Carosello loghi a due file -->
+<div class="logo-carousel my-5">
+  <!-- Fila superiore -->
+  <div class="logo-row">
+    <div class="logo-track" id="track-top">
+      <img src="media/img/logo1.jpg" alt="OtticaClienti associati 1">
+      <img src="media/img/logo2.jpg" alt="OtticaClienti associati 2">
+      <img src="media/img/logo3.jpg" alt="OtticaClienti associati 3">
+      <img src="media/img/logo4.jpg" alt="OtticaClienti associati 4">
+      
+    </div>
+  </div>
+
+  <!-- Fila inferiore -->
+  <div class="logo-row">
+    <div class="logo-track" id="track-bottom">
+      <img src="media/img/logo1.jpg" alt="OtticaClienti associati 1">
+      <img src="media/img/logo2.jpg" alt="OtticaClienti associati 2">
+      <img src="media/img/logo3.jpg" alt="OtticaClienti associati 3">
+      <img src="media/img/logo4.jpg" alt="OtticaClienti associati 4">
+    </div>
+  </div>
+</div>
+<div class="borderCustom mt-5 " style="width:90%; margin:0 auto;"></div>
+
+<section class="five-benefits roboto-slab" id="servizi">
+  <div class="container">
+
+    <h2 class="benefits-title">Cos'è</h2>
+    <h2 class="benefits-title2">Ottica Clienti</h2>
+
+    <!-- CARD 1 – ICONA SINISTRA -->
+    <div class="benefit-card left">
+      <div class="benefit-icon"><i class="fas fa-map-signs"></i></div>
+      <div class="benefit-content">
+        <h3>Studio del bacino d’utenza</h3>
+        <p>Analizziamo il territorio e individuiamo le persone più vicine al tuo modello di centro ottico.</p>
+      </div>
+    </div>
+
+    <!-- CARD 2 – ICONA DESTRA -->
+    <div class="benefit-card right">
+      <div class="benefit-icon"><i class="fas fa-phone-alt"></i></div>
+      <div class="benefit-content">
+        <h3>Contatto diretto con i potenziali clienti</h3>
+        <p>Gestiamo noi la comunicazione iniziale: ascoltiamo le esigenze e verifichiamo l’interesse.</p>
+      </div>
+    </div>
+
+    <!-- CARD 3 – ICONA SINISTRA -->
+    <div class="benefit-card left">
+      <div class="benefit-icon"><i class="fas fa-calendar-day"></i></div>
+      <div class="benefit-content">
+        <h3>Agenda organizzata per te</h3>
+        <p>Inseriamo in agenda solo appuntamenti confermati, senza interruzioni o imprevisti.</p>
+      </div>
+    </div>
+
+    <!-- CARD 4 – ICONA DESTRA -->
+    <div class="benefit-card right">
+      <div class="benefit-icon"><i class="fas fa-handshake"></i></div>
+      <div class="benefit-content">
+        <h3>Metodo adattato al tuo centro</h3>
+        <p>Ogni attività viene modellata sulle tue esigenze, senza format rigidi.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="borderCustom mb-5 " style="width:90%; margin:0 auto;"></div>
+
+<div class="content2" id="ilteam">
+  <h2 class="roboto-slab">
+    <span class="fs-1 text-green">Il Nostro</span>
+    <span class="fs-1 text-olive">Team</span>
+  </h2>
+</div>
+
+<section class="team-section roboto-slab">
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <!-- MEMBER 1 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/ettore.JPG" alt="Ettore Androsoni" class="team-photo">
+          <h3 class="team-name">Ettore Androsoni</h3>
+          <p class="team-role">Titolare & Founder</p>
+        </div>
+      </div>
+
+      <!-- MEMBER 2 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/simo.jpg" alt="Simone Del Prete" class="team-photo">
+          <h3 class="team-name">Simone Del Prete</h3>
+          <p class="team-role">Direttore Reparto Reclutamento</p>
+        </div>
+      </div>
+
+      <!-- MEMBER 3 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/matteo.jpg" alt="Matteo Murgia" class="team-photo">
+          <h3 class="team-name">Matteo Murgia</h3>
+          <p class="team-role">Direttore Relazioni Strategiche</p>
+        </div>
+      </div>
+
+      <!-- MEMBER 4 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/federica.jpg" alt="Federica Vadalà" class="team-photo">
+          <h3 class="team-name">Federica Vadalà</h3>
+          <p class="team-role">Direttrice Reparto Segreteria</p>
+        </div>
+      </div>
+
+      <!-- MEMBER 5 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/Vera.jpg" alt="Vera Baldazzi" class="team-photo">
+          <h3 class="team-name">Vera Baldazzi</h3>
+          <p class="team-role">Direttrice Qualifica Strategica</p>
+        </div>
+      </div>
+
+      <!-- MEMBER 6 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/flavio.jpg" alt="Flavio Sorgente" class="team-photo">
+          <h3 class="team-name">Flavio Sorgente</h3>
+          <p class="team-role">Attivazione Clienti</p>
+        </div>
+      </div>
+
+      <!-- MEMBER 7 -->
+      <div class="col-md-4 mb-4 d-flex">
+        <div class="team-card flex-fill">
+          <img src="media/img/michele.jpg" alt="Michele Zedda" class="team-photo">
+          <h3 class="team-name">Michele Zedda</h3>
+          <p class="team-role">Attivazione Clienti</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content2 roboto-slab text-center mt-5">
+      <h2 class="h2Custom fs-1">Un Team di Professionisti</h2>
+      <h2 class="h2Custom3 fs-1">dedicati al tuo successo</h2>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJw2MtKH2KC5GZxQKN_yAZ9osTJOgi1rkueBHAj0DDZoNCsw/viewform"
+         target="_blank"
+         class="btn btn-custom btn-lg mt-1">
+        Contattaci
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer montserratborderFooter">
+  <div class="container text-center">
+    <div class="row">
+      <!-- Colonna 1 -->
+      <div class="col-md-4 mb-3 mt-5">
+        <h5 class="footer-title">Contatti</h5>
+        <p>Email: info@otticaclienti.it</p>
+        <p>Whatsapp: +39 3758158591</p>
+      </div>
+      <!-- Colonna 2 -->
+      <div class="col-md-4 mb-3 mt-5">
+        <h5 class="footer-title">Seguici</h5>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/p/Ottica-Clienti-61576695869661/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ottica_clienti?igsh=MXdpYjZqZG41cjN2eQ=="><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ettore-androsoni-4b0a2b310/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <!-- Colonna 3 -->
+      <div class="col-md-4 mb-3">
+        <a class="navbar-brand col-4" href="./">
+          <img class="logoCustom" src="media/img/LogoOttica.png" alt="Ottica Clienti logo" />
+        </a>
+        <p class="fs-6"style="margin-top:0; line-height:0.9;">Il primo network dedicato agli ottici italiani</p>
+      </div>
+    </div>
+    <hr class="footer-line">
+    <p class="footer-copy">© 2025 Ottica Clienti - Tutti i diritti riservati</p>
+  </div>
+</footer>
+
+<!-- JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script defer src="style/js/script.js"></script>
+</body>
+</html>

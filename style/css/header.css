@@ -1,0 +1,106 @@
+.highlight {
+  color: #05935a;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.hero-wrapper {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+  padding: 90px 20px 60px; /* molto più compatto */
+  background-color: #f9f9f901;
+  overflow: hidden;
+  margin: 0;
+  min-height: auto; /* rimosso 100vh che creava troppo spazio */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .hero-wrapper {
+    padding-top: 110px; /* navbar + respiro */
+    padding-bottom: 60px;
+  }
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  color: #ffffffe4;
+  border-top: 6px solid #05935a;
+  border-bottom: 6px solid #05935a;
+}
+
+.hero-text h1,
+.hero-text h2 {
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-weight: 600;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+  font-size: 4vw;
+}
+
+.hero-text p {
+  line-height: 1.4;
+  font-size: 1.8vw;
+}
+
+@media (max-width: 576px) {
+  .hero-text h1 { font-size: 8vw; }
+  .hero-text h2 { font-size: 7vw; }
+  .hero-text p  { font-size: 4.5vw; }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  .hero-text h1 { font-size: 6vw; }
+  .hero-text h2 { font-size: 5vw; }
+  .hero-text p  { font-size: 3vw; }
+}
+
+@media (min-width: 992px) {
+  .hero-text h1 { font-size: 4rem; }
+  .hero-text h2 { font-size: 4rem; }
+  .hero-text p  { font-size: 1.5rem; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.logo-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.marginHeaderCustom {
+  margin-top: -1.5%;
+}
+
+@media (max-width: 576px) {
+  .marginHeaderCustom {
+    margin-top: -7%;
+  }
+}
+.underline-strong {
+  position: relative;
+}
+
+.underline-strong::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background-color: #05935a;
+  border-radius: 2px;
+}

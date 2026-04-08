@@ -1,0 +1,289 @@
+/* ============================
+   IMPORT
+============================ */
+@import "./navbar.css";
+@import "./card.css";
+@import "./spot.css";
+@import "./footer.css";
+@import "./header.css";
+@import "./recensioni.css";
+
+:root {
+  --olive: #05935a;
+  --text-dark: #1a1a1a;
+}
+body { padding-top: 120px; /* desktop */ } @media (max-width: 576px) { body { padding-top: 140px; /* mobile */ } }
+/* ============================
+   FONT
+============================ */
+.roboto-slab {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+/* ============================
+   SFONDO GENERALE
+============================ */
+body {
+  background: linear-gradient(to top, #0f1f1f, #021a10);
+  background-attachment: fixed;
+}
+.underline {
+  border-bottom: 4px solid #05935a;
+  padding-bottom: 1px;
+  display: inline-block;
+}
+
+
+
+.text-green { color: #ffffff; }
+.text-olive { color: #05935a; }
+
+
+/* ============================
+   CONTENUTO GENERALE
+============================ */
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.content,
+.content2 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: rgb(253, 253, 253);
+}
+
+.content { margin: 15% auto 10%; }
+.content2{
+  margin-top: 7%;
+}
+.content h1,
+.content h2 { margin-bottom: 65px; }
+
+/* ============================
+   BOTTONI
+============================ */
+.btn {
+  background: linear-gradient(135deg, #05935a, #046b44);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #06b86e, #05935a);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35), 0 0 12px rgba(5,147,90,0.6);
+}
+.btn2 {
+  background: #ffffff;
+  color: #121313;
+  padding: 12px 26px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.marginB{
+  margin-top: 90px;
+  margin-bottom:50px;
+}
+.btn2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  border: 2px solid #05935a;
+  transform: scale(0.6);
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.btn2:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.btn2:hover {
+  transform: translateY(-3px);
+}
+
+.btn-custom {
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #6B8E23;
+  color: #fff;
+}
+
+/* ============================
+   CAROSELLO PRINCIPALE
+============================ */
+#carouselExampleIndicators {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  height: 350px;
+  object-fit: cover;
+}
+
+.zoom-img {
+  transition: transform 6s ease;
+}
+
+.carousel-item.active .zoom-img {
+  transform: scale(1.1);
+}
+
+/* ============================
+   SEZIONE GARANZIA
+============================ */
+
+
+.garanzia-section {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgba(10, 10, 10, 0.825) !important;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.garanzia-section h2,
+.garanzia-section h4 {
+  font-family: "Roboto Slab", serif;
+}
+
+.garanzia-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.garanzia-section .btn {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/* ============================
+   DECORAZIONE PERSONALIZZATA
+============================ */
+.borderCustom {
+  border-bottom: 5px solid #05935a;
+  padding-bottom: 2rem;
+}
+.borderCustom2 {
+ border-bottom: 5px solid #05935a;
+ margin-top: -7%;
+}
+/* ============================
+   VIDEO
+============================ */
+.video-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ============================
+   TITOLI CUSTOM
+============================ */
+.h2Custom,
+.h2Custom2,
+.h2Custom3 {
+  line-height: 0.9;
+  font-weight: 600;
+  animation: fadeInUp 0.8s ease forwards;
+  font-size: 4vw;
+}
+
+.h2Custom   { color: #05935a; opacity: 0; }
+.h2Custom2  { color: #fefefe; opacity: 0; margin-bottom: 5%; }
+.h2Custom3  { color: #ffffff; }
+
+/* ============================
+   MARGINI & IMG
+============================ */
+.marginCustom { margin-top: -5%; }
+
+.col-md-5 img {
+  transform: scale(1.2);
+  object-fit: cover;
+}
+/* ============================
+   SERVIZI – CARD PREMIUM
+============================ */
+
+.service-card {
+  background: #ffffffd9;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--olive);
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--olive);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .service-card {
+    padding: 20px 15px;
+  }
+}

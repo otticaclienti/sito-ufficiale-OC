@@ -1,0 +1,25 @@
+.logo-row {
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  gap: 40px;
+  will-change: transform;
+}
+
+.logo-track img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #05935a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+@media (max-width: 576px) {
+  .logo-track img {
+    height: 70px;
+    width: 70px;
+  }
+}
