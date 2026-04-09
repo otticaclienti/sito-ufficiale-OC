@@ -20,8 +20,8 @@
   --bg-card: rgba(255, 255, 255, 0.04);
   --bg-card-hover: rgba(255, 255, 255, 0.08);
   --text-white: #ffffff;
-  --text-light: #c8d6d0;
-  --text-muted: #8a9e95;
+  --text-light: #e4ece8;
+  --text-muted: #b5c7be;
   --border-subtle: rgba(255, 255, 255, 0.08);
   --radius: 16px;
   --radius-sm: 10px;
@@ -99,7 +99,7 @@ section {
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: var(--text-light);
   margin-top: 16px;
   max-width: 500px;
   margin-left: auto;
@@ -169,7 +169,7 @@ section {
 .cta-subtext {
   margin-top: 14px;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-light);
 }
 
 /* ============================
@@ -196,4 +196,22 @@ section {
 .services-section,
 .team-section {
   border-top: 1px solid var(--border-subtle);
+}
+
+/* ============================
+   MOBILE GLOBAL
+============================ */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    padding: 5px 14px;
+  }
 }
